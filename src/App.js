@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import Expenses from "./Expenses";
+import React from "react";
 
 function App() {
+const property=[
+  {
+    id: 1,
+    title: 'Horizon Epic',
+    amount:499,
+    date: new Date(),
+
+  },
+  {
+    id: 2,
+    title: 'Big Bang',
+    amount:834,
+    date: new Date(),
+
+  },
+  {
+    id: 3,
+    title: 'Polymorphism',
+    amount:789,
+    date: new Date(),
+
+  },{
+    id: 4,
+    title: 'Encapsolation',
+    amount:459,
+    date: new Date(),
+
+  }
+]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <Expenses property={property}/>
+   </>
   );
 }
 
