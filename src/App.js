@@ -1,5 +1,6 @@
 import Expenses from "./Expenses";
 import React from "react";
+import NewExpense from "./NewExpense";
 
 function App() {
 const property=[
@@ -34,6 +35,7 @@ const property=[
 
   return (
    <>
+   <NewExpense/>
    <Expenses property={property}/>
    </>
   );
