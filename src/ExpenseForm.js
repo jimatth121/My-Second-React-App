@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enterTitle, setEnterTitle] = useState("");
   const [enterAmount, setEnterAmount] = useState("");
   const [enterDate, setEnterDate] = useState("");
@@ -19,6 +19,7 @@ const ExpenseForm = () => {
   const data = {title:enterTitle,
   amount:enterAmount,
 date:new Date(enterDate)}
+props.onSaveExpenseData(data)
 console.log(data);
 setEnterTitle("")
 setEnterDate("")
@@ -53,7 +54,7 @@ setEnterAmount("")
           />
         </div>
         <div className="absolute right-8">
-          <button className="p-4 border-[1px] bg-red-600  " type="submit">
+          <button className="py-3 px-4  bg-purple-900 rounded-md text-white " type="submit">
             Add Expense
           </button>
         </div>

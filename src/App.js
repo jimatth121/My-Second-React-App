@@ -1,9 +1,9 @@
 import Expenses from "./Expenses";
-import React from "react";
+import React, {useState} from "react";
 import NewExpense from "./NewExpense";
 
 function App() {
-const property=[
+const dummyData=[
   {
     id: 1,
     title: 'Horizon Epic',
@@ -32,11 +32,18 @@ const property=[
 
   }
 ]
+const [expenses, setExpenses] =useState(dummyData)
+const addExpenseHandler=(expense) =>{
+setExpenses(()=>{
+  return [expense, ...expenses]
+}
 
+);
+}
   return (
    <>
-   <NewExpense/>
-   <Expenses property={property}/>
+   <NewExpense addExpenseHandler ={addExpenseHandler}/>
+   <Expenses items={expenses}/>
    </>
   );
 }
