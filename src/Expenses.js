@@ -3,29 +3,30 @@ import ExpenseFilter from "./ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2023");
+  const [filteredYear, setFilteredYear] = useState("");
   const filterChangeHandler = (selectedYear) => {
     // console.log(selectedYear);
     setFilteredYear(selectedYear);
   };
   console.log(filteredYear);
-  console.log(
-    props.items.filter(
-      (expense) => expense.date.getFullYear().toString() !== filteredYear
-    )
+
+  const filteredExpense = props.items.filter(
+    (expense) => expense.date.getFullYear().toString() === filteredYear
   );
-  console.log(props.items.map((expense) => expense.date.getFullYear()));
+
+  let expenseContent = <p>There is no data to display</p>;
+  if(filteredExpense.length >0 ){
+    expenseContent = filteredExpense.map((expense) => {
+      return <ExpenseItem key={expense.id} data={expense} />;
+     })
+  }
   return (
     <div className=" my-0 mx-auto rounded-md py-8  max-w-[60%] w-[60%] bg-slate-400 px-4">
       <ExpenseFilter
         valued={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {props.items
-        .filter((expense) => expense.date.getFullYear().toString() === filteredYear)
-        .map((expense) => (
-          <ExpenseItem key={expense.id} data={expense} />
-        ))}
+      {expenseContent}
     </div>
   );
 };
