@@ -16,6 +16,7 @@ const ExpenseForm = (props) => {
   };
   const submitHandler  = (e)=>{
     e.preventDefault()
+    e.stopPropagation()
   const data = {title:enterTitle,
   amount:enterAmount,
 date:new Date(enterDate)}
@@ -53,7 +54,10 @@ setEnterAmount("")
            value={enterDate} className="py-2 px-1 block border-[1px] border-[#eee] w-[50%] rounded-md "
           />
         </div>
-        <div className="absolute right-8">
+        <div className="absolute right-8 gap-2 flex "> 
+        <button onClick={()=>props.onCancel(false)}  className="py-3 px-4  bg-red-900 rounded-md text-white " type="button">
+            cancel
+          </button>
           <button className="py-3 px-4  bg-purple-900 rounded-md text-white " type="submit">
             Add Expense
           </button>
