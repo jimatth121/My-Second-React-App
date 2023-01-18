@@ -6,27 +6,51 @@ import NewExpense from "./NewExpense";
 const dummyData = [
   {
     id: 1,
-    title: "Horizon Epic",
-    amount: 499,
-    date: new Date(),
+    title: "New Car",
+    amount: 40000,
+    date: new Date("2022-11-25"),
   },
   {
     id: 2,
-    title: "Big Bang",
-    amount: 834,
-    date: new Date(),
+    title: "Bride Price",
+    amount: 20000,
+    date: new Date("2022-10-25"),
   },
   {
     id: 3,
-    title: "Polymorphism",
+    title: "New House",
+    amount: 2400,
+    date: new Date("2021-01-25"),
+  },
+  {
+    id: 4,
+    title: "Month Upkeep",
+    amount: 834,
+    date: new Date("2022-03-25"),
+  },
+  {
+    id: 5,
+    title: "Birthday Party",
+    amount: 800,
+    date: new Date("2021-07-25"),
+  },
+  {
+    id: 6,
+    title: "New Phone",
+    amount: 900,
+    date: new Date("2021-04-25"),
+  },
+  {
+    id: 7,
+    title: "New Wardrope",
     amount: 789,
     date: new Date(),
   },
   {
-    id: 4,
-    title: "Encapsolation",
+    id: 8,
+    title: "Food Stuff",
     amount: 459,
-    date: new Date(),
+    date: new Date("2020-04-25"),
   },
 ];
 
@@ -41,7 +65,7 @@ function App() {
     // setHidden(true);
   };
   return (
-    <div className="bg-[#4D4C4D]">
+    <div className="bg-[#4D4C4D] min-h-screen  pt-10">
      
 <NewExpense addExpenseHandler={addExpenseHandler}/>
       <Expenses items={expenses} />

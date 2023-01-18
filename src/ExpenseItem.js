@@ -18,12 +18,10 @@ const ExpenseItem = (props) => {
         <ExpenseDate date={props.data.date} />
         <div className="text-2xl text-white">{title}</div>
       </div>
-      
-        <div className="py-2 bg-blue-900 rounded-md border-[1px] border-[#eee] px-10 text-white">
-          ${props.data.amount}{" "}
-        </div>
-       
-      
+
+      <div className="py-2 bg-blue-900 rounded-md border-[1px] border-[#eee] px-10 text-white">
+        ${props.data.amount}{" "}
+      </div>
     </div>
   );
 };
